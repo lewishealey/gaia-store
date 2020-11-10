@@ -34,10 +34,17 @@ module.exports = {
           concurrency: 5, // default, see using markdown and attachments for more information
           tables: [
             {
-              baseId: `tblRfwlpl1Guny0nR`,
+              baseId: `appPEbBkvn8rwZen5`,
               tableName: `Products`,
-              tableLinks: [`Ingredients`], // optional, for deep linking to records across tables.
+              queryName: `ProductData`,
+              tableLinks: [`Ingredient-Table`,`Categories`], // optional, for deep linking to records across tables.
             },
+            {
+                baseId: `appPEbBkvn8rwZen5`,
+                tableName: `Categories`,
+                queryName: `CategoryData`,
+                tableLinks: [`Products`], // optional, for deep linking to records across tables.
+              },
           ]
         }
       }
