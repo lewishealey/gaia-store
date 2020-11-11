@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `Gaia`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
   },
@@ -13,6 +13,14 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+        resolve: `gatsby-plugin-alias-imports`,
+        options: {
+          alias: {
+            "@layout": "src/components/layout"
+          },
+        }
+      },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -37,7 +45,7 @@ module.exports = {
               baseId: `appPEbBkvn8rwZen5`,
               tableName: `Products`,
               queryName: `ProductData`,
-              tableLinks: [`Ingredient-Table`,`Categories`], // optional, for deep linking to records across tables.
+              tableLinks: [`Ingredients`,`Categories`], // optional, for deep linking to records across tables.
             },
             {
                 baseId: `appPEbBkvn8rwZen5`,
@@ -45,6 +53,16 @@ module.exports = {
                 queryName: `CategoryData`,
                 tableLinks: [`Products`], // optional, for deep linking to records across tables.
               },
+            {
+                baseId: `appPEbBkvn8rwZen5`,
+                tableName: `Reviews`,
+                queryName: `ReviewData`,
+            },
+            {
+                baseId: `appPEbBkvn8rwZen5`,
+                tableName: `Ingredients`,
+                queryName: `IngredientData`,
+            },
           ]
         }
       }

@@ -24,7 +24,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                     data {
                       Slug
                       Name
-                      Ingredients
+                      Ingredients {
+                          data {
+                              Name
+                          }
+                      }
                     }
                   }
                   Slug
@@ -36,18 +40,71 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             edges {
               node {
                 data {
-                  Name
-                  Slug
-                  Categories {
-                    data {
-                      Name
-                      Slug
+                    Name
+                    Slug
+                    Price
+                    Ingredients {
+                        data {
+                            Name
+                        }
                     }
+                    Considerations
+                    Brand
+                    Thumbnail {
+                      thumbnails {
+                        full {
+                          url
+                          width
+                          height
+                        }
+                      }
+                    }
+                    Categories {
+                      data {
+                        Name
+                      }
+                    }
+                    Reviews
                   }
                 }
               }
             }
-          }
+
+            ingredients: allAirtable(filter: {queryName: {eq: "IngredientData"}}) {
+                edges {
+                  node {
+                    id
+                    queryName
+                    data {
+                        Name
+                        Redflag
+                        Product_Type
+                        Where_it_comes_from
+                        What_it_does__deodorant_
+                        Questions_to_ask
+                        Combination_of
+                        Countries
+                        Issues
+                        Growing_notes
+                        Ease_of_verification
+                        Toxicity
+                        Produced_as_a_byproduct_
+                        Where_it_comes_from
+                        Production_method
+                        Notes
+                        SEO_Keywords
+                        Products {
+                            id
+                            data {
+                            Name
+                            Slug
+                            }
+                        }
+                    }
+                  }
+                }
+              }
+
       }
     `
   )
@@ -59,6 +116,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // Create pages for each markdown file.
   const categoryTemplate = path.resolve(`src/templates/category.js`);
   const productTemplate = path.resolve(`src/templates/product.js`);
+  const ingredientTemplate = path.resolve(`src/templates/ingredient.js`);
 
   result.data.categories.edges.forEach(({ node }) => {
     createPage({
@@ -74,4 +132,31 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       context: node.data
     })
   })
+  result.data.ingredients.edges.forEach(({ node }) => {
+    createPage({
+      path: `ingredient/${string_to_slug(node.data.Name)}`,
+      component: ingredientTemplate,
+      context: node.data
+    })
+  })
+}
+
+
+
+function string_to_slug (str) {
+    str = str.replace(/^\s+|\s+$/g, ''); // trim
+    str = str.toLowerCase();
+
+    // remove accents, swap ñ for n, etc
+    var from = "àáäâèéëêìíïîòóöôùúüûñç·/_,:;";
+    var to   = "aaaaeeeeiiiioooouuuunc------";
+    for (var i=0, l=from.length ; i<l ; i++) {
+        str = str.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i));
+    }
+
+    str = str.replace(/[^a-z0-9 -]/g, '') // remove invalid chars
+        .replace(/\s+/g, '-') // collapse whitespace and replace by -
+        .replace(/-+/g, '-'); // collapse dashes
+
+    return str;
 }
