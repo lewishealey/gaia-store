@@ -1,7 +1,7 @@
 @import "tokens";
 
 body, html {
-    font-size: calc($base * 4);
+    font-size: $base * 4;
     color: $colour-text-default;
     font-family: Arial, Helvetica, sans-serif;
 }
