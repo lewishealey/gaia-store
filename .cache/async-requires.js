@@ -6,7 +6,6 @@ exports.components = {
   "component---src-pages-404-js": () => import("./../../../src/pages/404.js" /* webpackChunkName: "component---src-pages-404-js" */),
   "component---src-pages-index-js": () => import("./../../../src/pages/index.js" /* webpackChunkName: "component---src-pages-index-js" */),
   "component---src-pages-ingredients-js": () => import("./../../../src/pages/ingredients.js" /* webpackChunkName: "component---src-pages-ingredients-js" */),
-  "component---src-pages-page-2-js": () => import("./../../../src/pages/page-2.js" /* webpackChunkName: "component---src-pages-page-2-js" */),
   "component---src-pages-products-js": () => import("./../../../src/pages/products.js" /* webpackChunkName: "component---src-pages-products-js" */),
   "component---src-pages-using-typescript-tsx": () => import("./../../../src/pages/using-typescript.tsx" /* webpackChunkName: "component---src-pages-using-typescript-tsx" */),
   "component---src-templates-category-js": () => import("./../../../src/templates/category.js" /* webpackChunkName: "component---src-templates-category-js" */),

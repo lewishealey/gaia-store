@@ -48,11 +48,46 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                             Name
                         }
                     }
-                    Considerations
+                    Considerations {
+                        data {
+                            Icon {
+                                thumbnails {
+                                    full {
+                                      url
+                                    }
+                                }
+                            }
+                            Title
+                            Description
+                        }
+                    }
+                    Insights {
+                        data {
+                            Icon {
+                                thumbnails {
+                                    full {
+                                      url
+                                    }
+                                }
+                            }
+                            Title
+                            Description
+                        }
+                    }
                     Brand
                     Thumbnail {
                       thumbnails {
                         full {
+                          url
+                          width
+                          height
+                        }
+                        large {
+                          url
+                          width
+                          height
+                        }
+                        small {
                           url
                           width
                           height

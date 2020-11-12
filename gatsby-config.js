@@ -6,6 +6,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -45,7 +46,7 @@ module.exports = {
               baseId: `appPEbBkvn8rwZen5`,
               tableName: `Products`,
               queryName: `ProductData`,
-              tableLinks: [`Ingredients`,`Categories`], // optional, for deep linking to records across tables.
+              tableLinks: [`Ingredients`,`Categories`,`Insights`,`Considerations`], // optional, for deep linking to records across tables.
             },
             {
                 baseId: `appPEbBkvn8rwZen5`,
@@ -62,6 +63,16 @@ module.exports = {
                 baseId: `appPEbBkvn8rwZen5`,
                 tableName: `Ingredients`,
                 queryName: `IngredientData`,
+            },
+            {
+                baseId: `appPEbBkvn8rwZen5`,
+                tableName: `Insights`,
+                queryName: `InsightData`,
+            },
+            {
+                baseId: `appPEbBkvn8rwZen5`,
+                tableName: `Considerations`,
+                queryName: `ConsiderationData`,
             },
           ]
         }
