@@ -1,22 +1,12 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import Logo from "../images/logo.svg"
+import Menu from "../images/menu.svg"
+import Cart from "../images/cart.svg"
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
+  <header className="header">
         <Link
           to="/"
           style={{
@@ -24,10 +14,13 @@ const Header = ({ siteTitle }) => (
             textDecoration: `none`,
           }}
         >
-          {siteTitle}
+          <img src={Logo} width="72"/>
         </Link>
-      </h1>
-    </div>
+
+        <div className="header__actions">
+            <img src={Menu} height="16"/>
+            <img src={Cart} height="28"/>
+        </div>
   </header>
 )
 

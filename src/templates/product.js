@@ -1,52 +1,84 @@
 import React from "react"
+import { Link } from "gatsby"
 import Layout from "@layout"
+import Slider from "react-slick"
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
+import slugify from "slugify"
+import Arrow from "../images/arrow-right.svg"
 
 function Product({ pageContext }) {
 
     console.log(pageContext);
 
+    var settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1
+      };
+
   return (
     <Layout>
-        <img src="http://placehold.it/350x350" />
+
+        {pageContext.Thumbnail ?
+            <Slider {...settings} className="product__slider">
+                {pageContext.Thumbnail.map((thumbnail) => {
+                    return <div><img src={thumbnail.thumbnails.large.url} className="product__thumbnail"/></div>
+                })}
+            </Slider> : <img src="http://placehold.it/350x350" />}
+
         <div className="colour-text-brand">{pageContext.Brand}</div>
-        <h1>{pageContext.Name}</h1>
+        <h1 className="product__title">{pageContext.Name}</h1>
 
         <div className="btn__group">
             <button className="btn">Add to cart</button>
-            <button className="btn">Add to wishlist</button>
+            <button className="btn btn--fade">Add to wishlist</button>
         </div>
 
+        {pageContext.Insights &&
+            <section className="product__section">
+                <h3 className="product__section__title">⚡ Your eco insights</h3>
+                <p>We personally vet the entire supply chain to give you an honest and simple rating. Learn more</p>
+                <ul>
+                {pageContext.Insights ? pageContext.Insights.map((insight) => {
+                    return <li>{insight.data.Title}</li>;
+                }): null}
+                </ul>
+            </section>
+        }
+
+        {pageContext.Considerations &&
+            <section className="product__section">
+                <h3 className="product__section__title">Considerations</h3>
+                <ul>
+                {pageContext.Considerations ? pageContext.Considerations.map((consideration) => {
+                    return <li>{consideration.data.Title}</li>;
+                }): null}
+                </ul>
+            </section>
+        }
+
+        {pageContext.Ingredients &&
+            <section className="product__section">
+                <h3 className="product__section__title">Ingredients</h3>
+                <ul className="product__ingredients">
+                {pageContext.Ingredients ? pageContext.Ingredients.map((ingredient) => {
+                    return <Link to={`/ingredient/${slugify(ingredient.data.Name, {
+                        lower: true
+                    })}`}><li>{ingredient.data.Name} <img src={Arrow} alt="arrow" /></li></Link>;
+                }): null}
+                </ul>
+            </section>
+        }
+
         <section>
-            <h2>⚡ Your eco insights</h2>
-            <p>We personally vet the entire supply chain to give you an honest and simple rating. Learn more</p>
-            <ul>
-            {pageContext.Insights ? pageContext.Insights.map((insight) => {
-                return <li>{insight.data.Title}</li>;
-            }): null}
-            </ul>
-        </section>
-        <section>
-            <h2>Considerations</h2>
-            <ul>
-            {pageContext.Considerations ? pageContext.Considerations.map((consideration) => {
-                return <li>{consideration.data.Title}</li>;
-            }): null}
-            </ul>
-        </section>
-        <section>
-            <h2>Ingredients</h2>
-            <ul>
-            {pageContext.Ingredients ? pageContext.Ingredients.map((ingredient) => {
-                return <li>{ingredient.data.Name}</li>;
-            }): null}
-            </ul>
-        </section>
-        <section>
-            <h2>Community & Reviews</h2>
+            <h3 className="product__section__title">Community & Reviews</h3>
             <p>Reviews section</p>
         </section>
         <section>
-            <h2>Other products you may like</h2>
+            <h3 className="product__section__title">Other products you may like</h3>
             <p>Reviews section</p>
         </section>
     </Layout>

@@ -1,11 +1,61 @@
 @import "tokens";
 
+* {
+    box-sizing: inherit;
+}
+*:before {
+    box-sizing: inherit;
+}
+*:after {
+    box-sizing: inherit;
+}
+
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    box-sizing: border-box;
+    overflow-y: scroll;
+  }
+
+  body {
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: normal;
+    word-wrap: break-word;
+    font-kerning: normal;
+    -moz-font-feature-settings: "kern", "liga", "clig", "calt";
+    -ms-font-feature-settings: "kern", "liga", "clig", "calt";
+    -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
+    font-feature-settings: "kern", "liga", "clig", "calt";
+  }
+
 body, html {
     font-size: $base * 4;
     color: $colour-text-default;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
+h1,h2,h3,h4,h5,h6 {
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    font-size: 33px;
+    line-height: $base * 10;
+}
+
+h3 {
+    font-size: 18px;
+    line-height: $base * 6;
+}
+
+p {
+    font-weight: 100;
+}
 
 .colour-text-brand {
     color: $colour-text-brand;
@@ -18,10 +68,21 @@ body, html {
     border-radius: $base * 1.75;
     text-align: center;
     display: block;
+    font-family: "Montserrat";
+    font-weight: bold;
+    font-size: 20px;
+    background-image: linear-gradient(161deg, #04A558 0%, #158760 100%);
+    color: white;
 
     // Overrides
     border: 0;
     outline: 0;
+
+    &--fade {
+        background-color: $stone-50;
+        background-image: none;
+        color: $leaf-500;
+    }
 
     &__group {
 
@@ -33,4 +94,81 @@ body, html {
             }
         }
     }
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+
+    &__actions {
+        display: flex;
+        align-items: center;
+
+        img {
+            width: auto;
+            margin-left: 2rem;
+        }
+    }
+}
+
+.product {
+
+    &__slider {
+        margin-bottom: 2rem;
+    }
+
+    &__thumbnail {
+        max-width: 100%;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+    &__title {
+        margin: 0.5rem 0 2rem 0;
+    }
+
+    &__price {
+        margin: 0.5rem 0 2rem 0;
+    }
+}
+
+.product__section {
+    margin-bottom: 2rem;
+
+    &__title {
+        font-weight: bold;
+    }
+}
+
+.product__ingredients {
+    overflow-x: scroll;
+    white-space: nowrap;
+    margin: 0;
+    padding: 0;
+
+    a {
+        text-decoration: none;
+    }
+
+    li {
+        display: inline-flex;
+        background-color: $stone-100;
+        border-radius: 3px;
+        padding: 0.2rem 0.5rem;
+        margin-right: 0.5rem;
+        color: $night-500;
+        vertical-align: middle;
+        align-items: center;
+        text-decoration: none;
+
+        img {
+            width: 1rem;
+            height: 1rem;
+            fill: white;
+            margin-left: 0.5rem;
+        }
+    }
+
 }
