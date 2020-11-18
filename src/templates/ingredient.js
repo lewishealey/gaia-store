@@ -7,7 +7,7 @@ function Ingredient({ pageContext }) {
     console.log(pageContext)
   return (
     <Layout>
-        <div className="ingredient" style={{backgroundColor: pageContext.Background, color: pageContext.TextColour === "Dark" ? "##1A202C" : "#FFFFFF"}}>
+        <div className="ingredient" style={{backgroundColor: pageContext.Background, color: pageContext.TextColour === "Light" ? "#FFFFFF" : "#1A202C"}}>
         <h1 className="ingredient__title">{pageContext.Name}</h1>
 
         <img src={rating} alt="ratnig" className="ingredient__rating"/>
