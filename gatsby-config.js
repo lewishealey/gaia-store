@@ -18,8 +18,7 @@ module.exports = {
         resolve: `gatsby-plugin-google-fonts`,
         options: {
           fonts: [
-            `montserrat`,
-            `source sans pro\:100,200,300,400,400i,700` // you can also specify font weights and styles
+            `montserrat\:100,200,300,400,600,700,800,900` // you can also specify font weights and styles
           ],
           display: 'swap'
         }
@@ -56,7 +55,7 @@ module.exports = {
               baseId: `appPEbBkvn8rwZen5`,
               tableName: `Products`,
               queryName: `ProductData`,
-              tableLinks: [`Ingredients`,`Categories`,`Insights`,`Considerations`], // optional, for deep linking to records across tables.
+              tableLinks: [`Ingredients`,`Categories`,`Insights`,`Considerations`,`Questions`], // optional, for deep linking to records across tables.
             },
             {
                 baseId: `appPEbBkvn8rwZen5`,
@@ -73,6 +72,7 @@ module.exports = {
                 baseId: `appPEbBkvn8rwZen5`,
                 tableName: `Ingredients`,
                 queryName: `IngredientData`,
+                tableLinks: [`Products`,`Questions`], // optional, for deep linking to records across tables.
             },
             {
                 baseId: `appPEbBkvn8rwZen5`,
@@ -83,6 +83,11 @@ module.exports = {
                 baseId: `appPEbBkvn8rwZen5`,
                 tableName: `Considerations`,
                 queryName: `ConsiderationData`,
+            },
+            {
+                baseId: `appPEbBkvn8rwZen5`,
+                tableName: `Questions`,
+                queryName: `QuestionData`,
             },
           ]
         }

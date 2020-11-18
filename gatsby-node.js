@@ -128,13 +128,30 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                         Production_method
                         Notes
                         SEO_Keywords
+                        Background
+                        TextColour
+                        Questions {
+                            data {
+                              Title
+                              Answer
+                            }
+                          }
                         Products {
                             id
                             data {
                             Name
                             Slug
+                            Brand
+                            Thumbnail {
+                                thumbnails {
+                                  large {
+                                    url
+                                  }
+                                }
+                              }
                             }
                         }
+
                     }
                   }
                 }
