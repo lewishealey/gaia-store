@@ -3,6 +3,8 @@ import { Link } from "gatsby"
 import Layout from "@layout"
 import rating from "../images/rating.svg"
 
+//https://incidecoder.com/products/pixi-glow-tonic-discontinued-2
+
 function Ingredient({ pageContext }) {
     console.log(pageContext)
   return (

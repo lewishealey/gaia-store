@@ -276,3 +276,52 @@ h3 {
         margin-bottom: 0.5rem;
     }
 }
+
+.product-list {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+
+    &__thumbnail {
+        display: block;
+        margin-bottom: 0.5rem;
+        width: 100%;
+    }
+
+    li {
+        box-sizing: border-box;
+        position: relative;
+        display: inline-flex;
+        max-width: 160px;
+        width: 50%;
+        flex-basis: 50%;
+        margin-bottom: 2rem;
+        padding: 0.5rem;
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+
+    &__title {
+        position: relative;
+        display: block;
+        text-align: left;
+        word-wrap: normal;
+        white-space: normal;
+        margin: 0;
+    }
+
+    &__brand {
+        position: relative;
+        display: block;
+        color: $colour-text-brand;
+        font-weight: 700;
+        font-size: 0.875rem;
+        margin-bottom: 0.5rem;
+    }
+}
+

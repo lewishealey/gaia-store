@@ -9,9 +9,14 @@ const Ingredients = ({data}) => (
     <SEO title="Ingredients" />
     <h1>Ingredients</h1>
 
-    <ul>
+    <ul className="product-list">
     {data.ingredients ? data.ingredients.edges.map((ingredient) => {
-        return <li><Link to={`/ingredient/${string_to_slug(ingredient.node.data.Name)}`}>{ingredient.node.data.Name}</Link></li>;
+        return <li>
+            <Link to={`/ingredient/${string_to_slug(ingredient.node.data.Name)}`}>
+            <img src="http://placehold.it/160x160" className="product-list__thumbnail"/>
+                <h4 className="product-group__title">{ingredient.node.data.Name}</h4>
+            </Link>
+            </li>;
     }): null}
     </ul>
   </Layout>
