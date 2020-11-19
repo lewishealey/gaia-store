@@ -46,7 +46,7 @@ function string_to_slug (str) {
 
 export const query = graphql`
   query IngredientsQuery {
-    ingredients: allAirtable(filter: {queryName: {eq: "IngredientData"}}) {
+    ingredients: allAirtable(filter: {queryName: {eq: "IngredientData"}}, sort: {fields: data___Name, order: ASC}) {
         edges {
           node {
             id
