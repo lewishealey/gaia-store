@@ -22,7 +22,16 @@ function Product({ pageContext }) {
 
   return (
     <Layout>
-
+        <Helmet>
+            <meta charSet="utf-8" />
+            <meta name="robots" content="index, follow, max-snippet:-1 max-image-preview:large, max-video-preview:-1"></meta>
+            <meta property="og:locale" content="en_GB"></meta>
+            <meta property="og:type" content="website"></meta>
+            <meta property="og:title" content=""></meta>
+            <meta property="og:description" content=""></meta>
+            <meta property="og:url" content="https://savegaia.store/"></meta>
+            <meta property="og:site_name" content="Gaia"></meta>
+        </Helmet>
 
         {pageContext.Thumbnail ?
             <Slider {...settings} className="product__slider">
