@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import { Helmet } from "react-helmet";
 import Layout from "@layout"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
@@ -21,6 +22,40 @@ function Product({ pageContext }) {
 
   return (
     <Layout>
+        <Helmet>
+            <meta charSet="utf-8" />
+            <title>{pageContext.Meta_Title}</title>
+            <meta name="description" content={pageContext.Meta_Description}></meta>
+            <meta name="robots" content="index, follow, max-snippet:-1 max-image-preview:large, max-video-preview:-1"></meta>
+            <meta property="og:locale" content="en_GB"></meta>
+            <meta property="og:type" content="website"></meta>
+            <meta property="og:title" content={pageContext.Meta_Title}></meta>
+            <meta property="og:description" content={pageContext.Meta_Description}></meta>
+            <meta property="og:url" content="https://savegaia.store/"></meta>
+            <meta property="og:site_name" content="Gaia"></meta>
+
+            <script type="application/ld+json" class="saswp-custom-schema-markup-output">
+                { {
+                "@context": "http://schema.org",
+                "@type": "Product",
+                "brand": pageContext.Brand,
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "5",
+                    "reviewCount": "2"
+                },
+                "description": pageContext.Meta_Description,
+                "name": pageContext.Name,
+                "image": "https://850708.smushcdn.com/1870892/wp-content/uploads/2020/01/81405081_585260055604412_802524595292087944_n-522x522.jpg?lossy=0&amp;strip=1&amp;webp=1",
+                "offers": {
+                    "@type": "Offer",
+                    "availability": "http://schema.org/InStock",
+                    "price": "9.99",
+                    "priceCurrency": "GBP"
+                }
+                }}
+                </script>
+        </Helmet>
 
         {pageContext.Thumbnail ?
             <Slider {...settings} className="product__slider">

@@ -43,6 +43,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                     Name
                     Slug
                     Price
+                    Meta_Title
+                    Meta_Description
+                    SEO_Keywords
                     Ingredients {
                         data {
                             Name

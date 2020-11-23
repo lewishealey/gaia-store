@@ -33,6 +33,20 @@ module.exports = {
       },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-react-helmet`,
+    {
+        resolve: `gatsby-plugin-google-analytics`,
+        options: {
+          trackingId: "YOUR_GOOGLE_ANALYTICS_TRACKING_ID",
+          head: true,
+        },
+      },
+      {
+        resolve: "gatsby-plugin-google-tagmanager",
+        options: {
+          id: "GTM-MP25XCN",
+        },
+      },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
