@@ -23,12 +23,13 @@ function Product({ pageContext }) {
   return (
     <Layout>
         <Helmet>
+            <title>{pageContext.Meta_Title}</title>
             <meta charSet="utf-8" />
             <meta name="robots" content="index, follow, max-snippet:-1 max-image-preview:large, max-video-preview:-1"></meta>
             <meta property="og:locale" content="en_GB"></meta>
             <meta property="og:type" content="website"></meta>
-            <meta property="og:title" content=""></meta>
-            <meta property="og:description" content=""></meta>
+            <meta property="og:title" content={pageContext.Meta_Title} />
+            <meta property="og:description" content={pageContext.Meta_Description}></meta>
             <meta property="og:url" content="https://savegaia.store/"></meta>
             <meta property="og:site_name" content="Gaia"></meta>
         </Helmet>
