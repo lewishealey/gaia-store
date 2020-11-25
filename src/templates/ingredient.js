@@ -12,7 +12,7 @@ function Ingredient({ pageContext }) {
         <div className="ingredient" style={{backgroundColor: pageContext.Background, color: pageContext.TextColour === "Light" ? "#FFFFFF" : "#1A202C"}}>
         <h1 className="ingredient__title">{pageContext.Name}</h1>
 
-        <img src={rating} alt="ratnig" className="ingredient__rating"/>
+        <img src={rating} alt="ratnig" className="ingredient__rating" alt="rating"/>
 
         <ul className="ingredient__summary">
             <li>
@@ -62,7 +62,6 @@ function Ingredient({ pageContext }) {
                 {pageContext.Products.map((product, i) => {
                     return <li key={`product-${i}`}>
                         <Link to={`/product/${product.data.Slug}`}>
-                            <img src="http://placehold.it/160x160" className="product-group__thumbnail"/>
                             <span className="product-group__brand">{product.data.Brand}</span>
                             <h4 className="product-group__title">{product.data.Name}</h4>
                         </Link>

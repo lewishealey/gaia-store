@@ -1,26 +1,55 @@
-import React from "react"
+import React, {useState} from "react"
 import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const Ingredients = ({data}) => (
-  <Layout>
+const Ingredients = ({data}) => {
+    const [search, setSearch] = useState(null);
+
+  return <Layout>
     <SEO title="Ingredients" />
     <h1>Ingredients</h1>
 
-    <ul className="product-list">
+    <div className="ingredient-list__search">
+        <input className="input" placeholder={`Search all ${data.ingredients.edges.length} ingredients`}
+        onKeyDown={(e) => {
+            setSearch(e.target.value)
+        }}
+        onChange={(e) => {
+            setSearch(e.target.value)
+        }} value={search}/>
+    </div>
+
+    <div className="ingredient-list__searching">
+        {search && <div>Searching for '{search}'</div>}
+    </div>
+
+    <ul className="ingredient-list">
     {data.ingredients ? data.ingredients.edges.map((ingredient) => {
-        return <li>
+
+    if(search && ingredient.node.data.Name.includes(search)) {
+        return <li style={{backgroundColor: ingredient.node.data.Background ? ingredient.node.data.Background : "#E6F0ED"}}>
             <Link to={`/ingredient/${string_to_slug(ingredient.node.data.Name)}`}>
-            <img src="http://placehold.it/160x160" className="product-list__thumbnail"/>
                 <h4 className="product-group__title">{ingredient.node.data.Name}</h4>
             </Link>
-            </li>;
+        </li>;
+    }
+
+    if(!search) {
+        return <li style={{backgroundColor: ingredient.node.data.Background ? ingredient.node.data.Background : "#E6F0ED"}}>
+            <Link to={`/ingredient/${string_to_slug(ingredient.node.data.Name)}`}>
+                <h4 className="product-group__title">{ingredient.node.data.Name}</h4>
+            </Link>
+        </li>;
+    }
+
+
     }): null}
     </ul>
   </Layout>
-)
+}
+
 
 
 export default Ingredients;
@@ -52,6 +81,7 @@ export const query = graphql`
             id
             data {
               Name
+              Background
             }
             queryName
           }

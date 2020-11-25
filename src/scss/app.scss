@@ -176,7 +176,7 @@ h3 {
 
 
 .ingredient {
-    background-color: #e8e8e8;
+    background-color: #E6F0ED;
     border-radius: 20px;
     padding: 1.5rem;
 
@@ -299,6 +299,73 @@ h3 {
         flex-basis: 50%;
         margin-bottom: 2rem;
         padding: 0.5rem;
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+
+    &__title {
+        position: relative;
+        display: block;
+        text-align: left;
+        word-wrap: normal;
+        white-space: normal;
+        margin: 0;
+    }
+
+    &__brand {
+        position: relative;
+        display: block;
+        color: $colour-text-brand;
+        font-weight: 700;
+        font-size: 0.875rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
+
+.ingredient-list {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &__thumbnail {
+        display: block;
+        margin-bottom: 0.5rem;
+        width: 100%;
+    }
+
+    &__search {
+        margin-bottom: 1rem;
+
+        .input {
+            height: 44px;
+            border-radius: 3px;
+            width: 100%;
+            padding: 0 1rem;
+            font-size: 16px;
+            border: 1px solid #CED7D5;
+        }
+    }
+
+    &__searching {
+        margin-bottom: 1rem;
+    }
+
+    li {
+        box-sizing: border-box;
+        position: relative;
+        display: inline-flex;
+        margin-bottom: 0.5rem;
+        padding: 1rem;
+        width: 100%;
+        border-radius: 5px;
+        font-size: 20px;
 
         a {
             text-decoration: none;

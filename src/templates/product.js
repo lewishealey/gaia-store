@@ -61,7 +61,7 @@ function Product({ pageContext }) {
                 {pageContext.Thumbnail.map((thumbnail) => {
                     return <div><img src={thumbnail.thumbnails.large.url} className="product__thumbnail"/></div>
                 })}
-            </Slider> : <img src="http://placehold.it/350x350" />}
+            </Slider> : <img src="http://placehold.it/350x350" alt="placeholder"/>}
 
         <div className="colour-text-brand">{pageContext.Brand}</div>
         <h1 className="product__title">{pageContext.Name}</h1>
@@ -101,7 +101,7 @@ function Product({ pageContext }) {
                 {pageContext.Ingredients ? pageContext.Ingredients.map((ingredient) => {
                     return <Link to={`/ingredient/${slugify(ingredient.data.Name, {
                         lower: true
-                    })}`}><li>{ingredient.data.Name} <img src={Arrow} alt="arrow" /></li></Link>;
+                    })}`}><li>{ingredient.data.Name} <img src={Arrow} alt="arrow" alt="Arrow"/></li></Link>;
                 }): null}
                 </ul>
             </section>
