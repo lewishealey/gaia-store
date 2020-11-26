@@ -27,7 +27,6 @@ const Ingredients = ({data}) => {
 
     <ul className="ingredient-list">
     {data.ingredients ? data.ingredients.edges.map((ingredient) => {
-
     if(search && ingredient.node.data.Name.includes(search)) {
         return <li style={{backgroundColor: ingredient.node.data.Background ? ingredient.node.data.Background : "#E6F0ED"}}>
             <Link to={`/ingredient/${string_to_slug(ingredient.node.data.Name)}`}>
@@ -35,7 +34,6 @@ const Ingredients = ({data}) => {
             </Link>
         </li>;
     }
-
     if(!search) {
         return <li style={{backgroundColor: ingredient.node.data.Background ? ingredient.node.data.Background : "#E6F0ED"}}>
             <Link to={`/ingredient/${string_to_slug(ingredient.node.data.Name)}`}>

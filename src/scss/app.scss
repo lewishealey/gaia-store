@@ -283,22 +283,24 @@ h3 {
     padding: 0;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 
     &__thumbnail {
         display: block;
         margin-bottom: 0.5rem;
         width: 100%;
+        border-radius: 5px;
+        overflow: hidden;
     }
 
     li {
         box-sizing: border-box;
         position: relative;
         display: inline-flex;
-        max-width: 160px;
+        max-width: 180px;
         width: 50%;
         flex-basis: 50%;
         margin-bottom: 2rem;
-        padding: 0.5rem;
 
         a {
             text-decoration: none;
