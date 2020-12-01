@@ -15,10 +15,10 @@ const Products = ({data}) => (
             <Link to={`/product/${product.node.data.Slug}`}>
                 {product.node.data.Thumbnail ?
                     <div>
-                        <img src={product.node.data.Thumbnail[0].thumbnails.large.url} className="product-list__thumbnail"/>
+                        <img src={product.node.data.Thumbnail[0].thumbnails.large.url} className="product-list__thumbnail" alt="Thukbnail"/>
                     </div>
                 : <div>
-                <img src="https://via.placeholder.com/450/450" className="product-list__thumbnail"/>
+                <img src="https://place-hold.it/450x450/f3f3f3/f3f3f3" className="product-list__thumbnail" alt="Thumbnail"/>
             </div>}
                 <h4 className="product-list__title">{product.node.data.Name}</h4></Link></li>;
     }): null}

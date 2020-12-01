@@ -37,12 +37,20 @@ function Product({ pageContext }) {
         {pageContext.Thumbnail ?
             <Slider {...settings} className="product__slider">
                 {pageContext.Thumbnail.map((thumbnail) => {
-                    return <div><img src={thumbnail.thumbnails.large.url} className="product__thumbnail"/></div>
+                    return <div><img src={thumbnail.thumbnails.large.url} className="product__thumbnail" alt="Thumbnail"/></div>
                 })}
-            </Slider> : <img src="http://placehold.it/350x350" alt="placeholder"/>}
+            </Slider> : <img src="https://place-hold.it/450x450/f3f3f3/f3f3f3" className="product-list__thumbnail" alt="Thumbnail"/>}
 
         <div className="colour-text-brand">{pageContext.Brand}</div>
         <h1 className="product__title">{pageContext.Name}</h1>
+
+        {pageContext.Prices &&
+            <select className="select">
+                {pageContext.Prices.map((price) =>{
+                    return <option>{price.data.Name} - £{price.data.Price}.00</option>
+                })}
+            </select>
+        }
 
         <div className="btn__group">
             <button className="btn">Add to cart</button>
@@ -79,16 +87,38 @@ function Product({ pageContext }) {
                 {pageContext.Ingredients ? pageContext.Ingredients.map((ingredient) => {
                     return <Link to={`/ingredient/${slugify(ingredient.data.Name, {
                         lower: true
-                    })}`}><li>{ingredient.data.Name} <img src={Arrow} alt="arrow" alt="Arrow"/></li></Link>;
+                    })}`}><li>{ingredient.data.Name} <img src={Arrow} alt="Arrow"/></li></Link>;
                 }): null}
                 </ul>
             </section>
         }
 
+        {pageContext.Reviews &&
         <section>
             <h3 className="product__section__title">Community & Reviews</h3>
-            <p>Reviews section</p>
+            <ul className="reviews__list">
+                {pageContext.Reviews.map((review) => {
+                        return <li className="reviews__item">
+                            <div className="reviews__item__bio">
+                                {review.data.Thumbnail &&
+                                    <div className="reviews__item__thumbnail">
+                                        <img src={review.data.Thumbnail[0].url} className="reviews__item__thumbnail-img" alt="Thumbnail" />
+                                    </div>
+                                }
+                                <div className="reviews__item__summary">
+                                    <h3 className="reviews__item__name">{review.data.Name}</h3>
+                                    <h4 className="reviews__item__job">{review.data.Job}</h4>
+                                </div>
+                            </div>
+                            <div className="reviews__item__description">
+                                "{review.data.Description}"
+                            </div>
+                        </li>;
+                })}
+            </ul>
         </section>
+        }
+
         <section>
             <h3 className="product__section__title">Other products you may like</h3>
             <p>Reviews section</p>

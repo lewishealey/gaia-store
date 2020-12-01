@@ -42,10 +42,31 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                 data {
                     Name
                     Slug
-                    Price
                     Meta_Title
                     Meta_Description
                     SEO_Keywords
+                    Reviews {
+                        data {
+                          Name
+                          Job
+                          Verified
+                          Thumbnail {
+                            url
+                          }
+                          Type
+                          Title
+                          Description
+                          Materials
+                          Sustainability
+                        }
+                    }
+                    Prices {
+                        data {
+                            Name
+                            Category
+                            Price
+                        }
+                    }
                     Ingredients {
                         data {
                             Name
@@ -102,7 +123,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                         Name
                       }
                     }
-                    Reviews
                   }
                 }
               }
@@ -129,7 +149,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                         Produced_as_a_byproduct_
                         Where_it_comes_from
                         Production_method
-                        Notes
                         SEO_Keywords
                         Background
                         TextColour

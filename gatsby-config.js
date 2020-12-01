@@ -65,7 +65,7 @@ module.exports = {
               baseId: `appPEbBkvn8rwZen5`,
               tableName: `Products`,
               queryName: `ProductData`,
-              tableLinks: [`Ingredients`,`Categories`,`Insights`,`Considerations`,`Questions`], // optional, for deep linking to records across tables.
+              tableLinks: [`Ingredients`,`Categories`,`Insights`,`Considerations`,`Questions`,`Prices`,`Reviews`], // optional, for deep linking to records across tables.
             },
             {
                 baseId: `appPEbBkvn8rwZen5`,
@@ -98,6 +98,16 @@ module.exports = {
                 baseId: `appPEbBkvn8rwZen5`,
                 tableName: `Questions`,
                 queryName: `QuestionData`,
+            },
+            {
+                baseId: `appPEbBkvn8rwZen5`,
+                tableName: `Prices`,
+                queryName: `PriceData`,
+            },
+            {
+                baseId: `appPEbBkvn8rwZen5`,
+                tableName: `Reviews`,
+                queryName: `ReviewData`,
             },
           ]
         }
