@@ -61,7 +61,9 @@ function Product({ pageContext }) {
             <section className="product__section">
                 <h3 className="product__section__title">⚡ Your eco insights</h3>
                 <p>We personally vet the entire supply chain to give you an honest and simple rating. Learn more</p>
-                <ul>
+
+                <h4 className="product__section__subtitle">Top insights</h4>
+                <ul className="product__list">
                 {pageContext.Insights ? pageContext.Insights.map((insight) => {
                     return <li>{insight.data.Title}</li>;
                 }): null}
@@ -71,8 +73,8 @@ function Product({ pageContext }) {
 
         {pageContext.Considerations &&
             <section className="product__section">
-                <h3 className="product__section__title">Considerations</h3>
-                <ul>
+                <h4 className="product__section__subtitle">Considerations</h4>
+                <ul className="product__list">
                 {pageContext.Considerations ? pageContext.Considerations.map((consideration) => {
                     return <li>{consideration.data.Title}</li>;
                 }): null}
@@ -121,7 +123,29 @@ function Product({ pageContext }) {
 
         <section>
             <h3 className="product__section__title">Other products you may like</h3>
-            <p>Reviews section</p>
+            <ul className="product-group">
+                <li>
+                    <a href="#">
+                        <img src="https://place-hold.it/450x450/f3f3f3/f3f3f3" className="product-list__thumbnail" alt="Thumbnail"/>
+                        <span className="product-group__brand">Brand</span>
+                        <h4 className="product-group__title">Product name</h4>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="https://place-hold.it/450x450/f3f3f3/f3f3f3" className="product-list__thumbnail" alt="Thumbnail"/>
+                        <span className="product-group__brand">Brand</span>
+                        <h4 className="product-group__title">Product name</h4>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="https://place-hold.it/450x450/f3f3f3/f3f3f3" className="product-list__thumbnail" alt="Thumbnail"/>
+                        <span className="product-group__brand">Brand</span>
+                        <h4 className="product-group__title">Product name</h4>
+                    </a>
+                </li>
+            </ul>
         </section>
     </Layout>
   )

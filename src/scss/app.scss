@@ -55,6 +55,11 @@ h3 {
     line-height: $base * 6;
 }
 
+p {
+    font-family: "Montserrat";
+    line-height: 1.6;
+}
+
 
 .colour-text-brand {
     color: $colour-text-brand;
@@ -85,6 +90,7 @@ h3 {
     }
 
     &__group {
+        margin-bottom: 1.5rem;
 
         button {
             margin-bottom: 0.5rem;
@@ -115,6 +121,32 @@ h3 {
 
 .product {
 
+    &__list {
+        margin: 0;
+        padding: 0;
+
+        li {
+            position: relative;
+            list-style: none;
+            border-bottom: 1px solid $stone-100;
+            padding: 0.75rem 0;
+            font-family: "Montserrat";
+
+            &:after {
+                position: absolute;
+                content: "";
+                height: 1rem;
+                width: 1rem;
+                right: 0.5rem;
+                background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4IiB2aWV3Qm94PSIwIDAgMTYgMTYiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDU5LjEgKDg2MTQ0KSAtIGh0dHBzOi8vc2tldGNoLmNvbSAtLT4KICAgIDx0aXRsZT5JbnNpZ2h0PC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGcgaWQ9IlBhZ2UtMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj4KICAgICAgICA8ZyBpZD0iSW5zaWdodCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTMyNi4wMDAwMDAsIC00LjAwMDAwMCkiIHN0cm9rZT0iIzAwMDAwMCI+CiAgICAgICAgICAgIDxnIGlkPSJHcm91cC0yIj4KICAgICAgICAgICAgICAgIDxnIGlkPSJhcnJvdy1kb3duLTEiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMyNy4wMDAwMDAsIDguMDAwMDAwKSI+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTTAuMzA5MTQyODU3LDAuMzU4Mjg1NzE0IEw2LjY2NjI4NTcxLDcuNTQyODU3MTQgQzYuNzIwNTE2ODQsNy42MDQxNjI1MyA2Ljc5ODQzNjA2LDcuNjM5MjY1NzIgNi44ODAyODU3MSw3LjYzOTI2NTcyIEM2Ljk2MjEzNTM2LDcuNjM5MjY1NzIgNy4wNDAwNTQ1OSw3LjYwNDE2MjUzIDcuMDk0Mjg1NzEsNy41NDI4NTcxNCBMMTMuNDUyLDAuMzU4Mjg1NzE0IiBpZD0iUGF0aCI+PC9wYXRoPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4=");
+            }
+
+            &.active:after {
+                background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4IiB2aWV3Qm94PSIwIDAgMTYgMTYiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDU5LjEgKDg2MTQ0KSAtIGh0dHBzOi8vc2tldGNoLmNvbSAtLT4KICAgIDx0aXRsZT5JbnNpZ2h0PC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGcgaWQ9IlBhZ2UtMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj4KICAgICAgICA8ZyBpZD0iSW5zaWdodC0vLVVwIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMzI0LjAwMDAwMCwgLTQuMDAwMDAwKSIgc3Ryb2tlPSIjMDAwMDAwIj4KICAgICAgICAgICAgPGcgaWQ9Ikdyb3VwLTIiPgogICAgICAgICAgICAgICAgPGcgaWQ9ImFycm93LWRvd24tMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzMyLjAwMDAwMCwgMTIuMDAwMDAwKSBzY2FsZSgxLCAtMSkgdHJhbnNsYXRlKC0zMzIuMDAwMDAwLCAtMTIuMDAwMDAwKSB0cmFuc2xhdGUoMzI1LjAwMDAwMCwgOC4wMDAwMDApIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMC4zMDkxNDI4NTcsMC4zNTgyODU3MTQgTDYuNjY2Mjg1NzEsNy41NDI4NTcxNCBDNi43MjA1MTY4NCw3LjYwNDE2MjUzIDYuNzk4NDM2MDYsNy42MzkyNjU3MiA2Ljg4MDI4NTcxLDcuNjM5MjY1NzIgQzYuOTYyMTM1MzYsNy42MzkyNjU3MiA3LjA0MDA1NDU5LDcuNjA0MTYyNTMgNy4wOTQyODU3MSw3LjU0Mjg1NzE0IEwxMy40NTIsMC4zNTgyODU3MTQiIGlkPSJQYXRoIj48L3BhdGg+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgIDwvZz4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPg==");
+            }
+        }
+    }
+
     &__slider {
         margin-bottom: 2rem;
     }
@@ -139,6 +171,10 @@ h3 {
 
     &__title {
         font-weight: bold;
+    }
+
+    &__subtitle {
+        margin: 1.5rem 0 0.5rem 0;
     }
 }
 
@@ -425,13 +461,13 @@ h3 {
 
         &__name {
             margin: 0;
-            font-size: $base * 3;
+            font-size: $base * 3.5;
             line-height: $base * 5;
         }
 
         &__job {
             margin: 0;
-            font-size: $base * 3;
+            font-size: $base * 3.5;
             line-height: $base * 4;
             font-weight: 700;
             color: $stone-500;
@@ -467,7 +503,8 @@ h3 {
         &__description {
             font-family: "Montserrat";
             font-size: $base * 3.5;
-            line-height: $base * 5;
+            line-height: $base * 6;
+            font-weight: 500;
         }
     }
 }
