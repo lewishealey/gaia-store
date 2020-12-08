@@ -9,7 +9,7 @@ const Index = ({data}) => {
 
   return <Layout>
     <SEO title="Ingredients" />
-    <h1>No bullshit ingredients information</h1>
+    <h1>Ingredients info you can understand</h1>
     <h2>Subtitle here</h2>
 
     <div className="ingredient-list__search">
@@ -36,7 +36,7 @@ const Index = ({data}) => {
         </li>;
     }
     if(!search) {
-        return <li style={{backgroundColor: ingredient.node.data.Background ? ingredient.node.data.Background : "#E6F0ED"}}>
+        return <li style={{backgroundColor: "#E6F0ED"}}>
             <Link to={`/ingredient/${string_to_slug(ingredient.node.data.Name)}`}>
                 <h4 className="product-group__title">{ingredient.node.data.Name}</h4>
             </Link>
