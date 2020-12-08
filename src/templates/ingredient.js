@@ -9,7 +9,7 @@ function Ingredient({ pageContext }) {
     console.log(pageContext)
   return (
     <Layout>
-        <div className="ingredient" style={{backgroundColor: pageContext.Background, color: pageContext.TextColour === "Light" ? "#FFFFFF" : "#1A202C"}}>
+        <div className="ingredient" style={{backgroundColor: pageContext.Background, color: "#1A202C"}}>
         <h1 className="ingredient__title">{pageContext.Name}</h1>
 
         <img src={rating} className="ingredient__rating" alt="rating"/>
@@ -43,7 +43,7 @@ function Ingredient({ pageContext }) {
 
         {pageContext.Questions &&
             <section className="product__section">
-                    <h3 className="ingredient__section__title">Quick facts</h3>
+                    <h3 className="ingredient__section__title">Common questions</h3>
                     <ul className="question__list">
                         {pageContext.Questions.map((question) => {
                             return <li className="question">
@@ -53,23 +53,6 @@ function Ingredient({ pageContext }) {
                         })}
                     </ul>
             </section>
-        }
-
-        {pageContext.Products &&
-        <section className="product__section">
-            <h3 className="ingredient__section__title">Common products</h3>
-            <ul className="product-group">
-                {pageContext.Products.map((product, i) => {
-                    return <li key={`product-${i}`}>
-                        <Link to={`/product/${product.data.Slug}`}>
-                            <img src="https://place-hold.it/450x450/f3f3f3/f3f3f3" className="product-list__thumbnail" alt="Thumbnail"/>
-                            <span className="product-group__brand">{product.data.Brand}</span>
-                            <h4 className="product-group__title">{product.data.Name}</h4>
-                        </Link>
-                    </li>;
-                })}
-            </ul>
-        </section>
         }
     </Layout>
   )

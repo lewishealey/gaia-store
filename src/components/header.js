@@ -17,10 +17,6 @@ const Header = ({ siteTitle }) => (
           <img src={Logo} width="72" alt="Gaia logo"/>
         </Link>
 
-        <div className="header__actions">
-            <img src={Menu} height="16" alt="Menu icon"/>
-            <img src={Cart} height="28" alt="Cart icon"/>
-        </div>
   </header>
 )
 
