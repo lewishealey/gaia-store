@@ -4,7 +4,7 @@ import { Link, graphql } from "gatsby"
 import Layout from "@layout"
 import SEO from "@seo"
 
-const Ingredients = ({data}) => {
+const Index = ({data}) => {
     const [search, setSearch] = useState(null);
 
   return <Layout>
@@ -51,7 +51,7 @@ const Ingredients = ({data}) => {
 
 
 
-export default Ingredients;
+export default Index;
 
 function string_to_slug (str) {
     str = str.replace(/^\s+|\s+$/g, ''); // trim
