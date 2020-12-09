@@ -395,6 +395,13 @@ p {
     &__search {
         margin-bottom: 1rem;
 
+        label {
+            display: block;
+            font-size: 1rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
         .input {
             height: 44px;
             border-radius: 3px;
@@ -412,16 +419,6 @@ p {
     a {
         text-decoration: none;
         color: inherit;
-
-        @include phone-up {
-            width: 100%;
-            margin-bottom: 0.5rem;
-        }
-
-        @include tablet-up {
-            width: 100%;
-            margin-bottom: 0;
-        }
     }
 
     li {
@@ -429,7 +426,6 @@ p {
         position: relative;
         display: inline-flex;
         align-items: center;
-        padding: 1rem;
         border-radius: 5px;
         font-size: 20px;
         height: 100%;
@@ -440,6 +436,17 @@ p {
         }
 
         @include phone-up {
+            width: 100%;
+            margin-bottom: 0.5rem;
+        }
+
+        @include tablet-up {
+            width: 100%;
+            margin-bottom: 0;
+        }
+
+        a {
+            padding: 1rem;
             width: 100%;
         }
 

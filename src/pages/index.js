@@ -13,7 +13,8 @@ const Index = ({data}) => {
     <h2>Subtitle here</h2>
 
     <div className="ingredient-list__search">
-        <input className="input" placeholder={`Search all ${data.ingredients.edges.length} ingredients`}
+        <label for="search">Search all {data.ingredients.edges.length} ingredients</label>
+        <input className="input" placeholder={`E.g Limonene`}
         onKeyDown={(e) => {
             setSearch(e.target.value)
         }}
@@ -26,26 +27,29 @@ const Index = ({data}) => {
         {search && <div>Searching for '{search}'</div>}
     </div>
 
-    <ul className="ingredient-list">
-    {data.ingredients ? data.ingredients.edges.map((ingredient) => {
-    if(search && ingredient.node.data.Name.includes(search)) {
-        return <Link to={`/ingredient/${string_to_slug(ingredient.node.data.Name)}`}>
-            <li>
-            <h4 className="product-group__title">{ingredient.node.data.Name}</h4>
-        </li>
-        </Link>;
-    }
-    if(!search) {
-        return  <Link to={`/ingredient/${string_to_slug(ingredient.node.data.Name)}`}>
-            <li>
-                <h4 className="product-group__title">{ingredient.node.data.Name}</h4>
-            </li>
-        </Link>;
-    }
+    <section>
+
+        <ul className="ingredient-list">
+        {data.ingredients ? data.ingredients.edges.map((ingredient) => {
+        if(search && ingredient.node.data.Name.includes(search)) {
+            return <li>
+                    <Link to={`/ingredient/${string_to_slug(ingredient.node.data.Name)}`}>
+                    <h3 className="product-group__title">{ingredient.node.data.Name}</h3>
+                </Link>
+            </li>;
+        }
+        if(!search) {
+            return <li>
+                <Link to={`/ingredient/${string_to_slug(ingredient.node.data.Name)}`}>
+                    <h3 className="product-group__title">{ingredient.node.data.Name}</h3>
+                    </Link>
+                </li>;
+        }
 
 
-    }): null}
+        }): null}
     </ul>
+    </section>
   </Layout>
 }
 

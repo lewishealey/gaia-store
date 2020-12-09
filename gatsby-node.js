@@ -124,9 +124,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                     data {
                         Name
                         Redflag
+                        What_does_it_do
                         Product_Type
                         Where_it_comes_from
                         What_it_does__deodorant_
+                        Scientific_description
                         Questions_to_ask
                         Combination_of
                         Countries
@@ -135,7 +137,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                         Ease_of_verification
                         Toxicity
                         Produced_as_a_byproduct_
-                        Where_it_comes_from
                         Production_method
                         SEO_Keywords
                         Background
