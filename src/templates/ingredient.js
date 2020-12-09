@@ -6,7 +6,6 @@ import rating from "../images/rating.svg"
 //https://incidecoder.com/products/pixi-glow-tonic-discontinued-2
 
 function Ingredient({ pageContext }) {
-    console.log(pageContext)
   return (
     <Layout>
         <div className="ingredient" style={{backgroundColor: pageContext.Background, color: "#1A202C"}}>

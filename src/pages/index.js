@@ -8,7 +8,7 @@ const Index = ({data}) => {
     const [search, setSearch] = useState(null);
 
   return <Layout>
-    <SEO title="Ingredients" />
+    <SEO title="Ingredients info you can understand" />
     <h1>Ingredients info you can understand</h1>
     <h2>Subtitle here</h2>
 

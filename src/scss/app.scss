@@ -412,6 +412,16 @@ p {
     a {
         text-decoration: none;
         color: inherit;
+
+        @include phone-up {
+            width: 100%;
+            margin-bottom: 0.5rem;
+        }
+
+        @include tablet-up {
+            width: 100%;
+            margin-bottom: 0;
+        }
     }
 
     li {
@@ -433,10 +443,6 @@ p {
             width: 100%;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
     }
 
     &__title {
@@ -540,13 +546,14 @@ p {
 .layout {
     width: 100%;
     display: block;
-    margin: 0 auto;
 
     @include phone-up {
-
+        padding: 0 1rem;
     }
 
     @include tablet-up {
         max-width: 1024px;
+        margin: 0 auto;
+        padding: 0;
     }
 }
