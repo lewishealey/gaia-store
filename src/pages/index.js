@@ -29,18 +29,18 @@ const Index = ({data}) => {
     <ul className="ingredient-list">
     {data.ingredients ? data.ingredients.edges.map((ingredient) => {
     if(search && ingredient.node.data.Name.includes(search)) {
-        return <li style={{backgroundColor: ingredient.node.data.Background ? ingredient.node.data.Background : "#E6F0ED"}}>
-            <Link to={`/ingredient/${string_to_slug(ingredient.node.data.Name)}`}>
-                <h4 className="product-group__title">{ingredient.node.data.Name}</h4>
-            </Link>
-        </li>;
+        return <Link to={`/ingredient/${string_to_slug(ingredient.node.data.Name)}`}>
+            <li>
+            <h4 className="product-group__title">{ingredient.node.data.Name}</h4>
+        </li>
+        </Link>;
     }
     if(!search) {
-        return <li style={{backgroundColor: "#E6F0ED"}}>
-            <Link to={`/ingredient/${string_to_slug(ingredient.node.data.Name)}`}>
+        return  <Link to={`/ingredient/${string_to_slug(ingredient.node.data.Name)}`}>
+            <li>
                 <h4 className="product-group__title">{ingredient.node.data.Name}</h4>
-            </Link>
-        </li>;
+            </li>
+        </Link>;
     }
 
 

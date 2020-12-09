@@ -12,8 +12,6 @@ function Ingredient({ pageContext }) {
         <div className="ingredient" style={{backgroundColor: pageContext.Background, color: "#1A202C"}}>
         <h1 className="ingredient__title">{pageContext.Name}</h1>
 
-        <img src={rating} className="ingredient__rating" alt="rating"/>
-
         <ul className="ingredient__summary">
             <li>
                 <span className="ingredient__summary__label">Where it comes from</span>

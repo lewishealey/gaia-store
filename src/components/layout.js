@@ -24,14 +24,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 414,
-          padding: `0 1.0875rem 1.45rem`,
-          width: `100%`
-        }}
-      >
+      <div className="layout">
         <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
         <main>{children}</main>
         <footer style={{

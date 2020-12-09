@@ -1,0 +1,86 @@
+/**
+ * Boostrap mixins : https://github.com/twbs/bootstrap-sass/tree/master/assets/stylesheets/bootstrap/mixins
+ */
+
+ @mixin gradient($from, $to) {
+    background: $from; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, $from 0%, $to 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, $from 0%,$to 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, $from 0%,$to 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  }
+
+  @mixin transition($args...) {
+      -webkit-transition: $args;
+      -moz-transition: $args;
+      -ms-transition: $args;
+      -o-transition: $args;
+      transition: $args;
+  }
+
+$phone-xs-width: 300px;
+$phone-s-width: 576px;
+$tablet-width: 768px;
+$tablet-xl-width: 922px;
+$desktop-width: 1200px;
+$desktop-xl-width: 1600px;
+
+@mixin phone-xs-up {
+  @media (min-width: #{$phone-xs-width}) {
+    @content;
+  }
+}
+
+@mixin phone-down {
+  @media (max-width: #{$phone-s-width}) {
+    @content;
+  }
+}
+
+@mixin phone-up {
+  @media (min-width: #{$phone-xs-width}) {
+    @content;
+  }
+}
+
+@mixin tablet-up {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin tablet-xl-up {
+  @media (min-width: #{$tablet-xl-width}) {
+    @content;
+  }
+}
+
+@mixin desktop-up {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin desktop-xl-up {
+  @media (min-width: #{$desktop-xl-width}) {
+    @content;
+  }
+}
+
+@mixin mboxshadow($depth:1) {
+  @if $depth==1 {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  }
+  @else if $depth==2 {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  }
+  @else if $depth==3 {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  }
+  @else if $depth==4 {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.125), 0 10px 10px rgba(0, 0, 0, 0.11);
+  }
+  @else if $depth==5 {
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.15), 0 15px 12px rgba(0, 0, 0, 0.11);
+  }
+  transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
