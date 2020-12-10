@@ -14,7 +14,7 @@ const Index = ({data}) => {
 
     <div className="ingredient-list__search">
         <label for="search">Search all {data.ingredients.edges.length} ingredients</label>
-        <input className="input" placeholder={`E.g Limonene`}
+        <input className="input" id="search" placeholder={`E.g Limonene`}
         onKeyDown={(e) => {
             setSearch(e.target.value)
         }}

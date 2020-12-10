@@ -18,13 +18,15 @@ module.exports = {
       },
     },
     {
-        resolve: `gatsby-plugin-google-fonts`,
+        resolve: `gatsby-plugin-prefetch-google-fonts`,
         options: {
           fonts: [
-            `montserrat\:100,200,300,400,600,700,800,900` // you can also specify font weights and styles
+            {
+              family: `Montserrat`,
+              subsets: [`100`,`200`,`300`,`400`,`500`,`600`,`700`,`800`,`900`],
+            },
           ],
-          display: 'swap'
-        }
+        },
       },
     {
         resolve: `gatsby-plugin-alias-imports`,
@@ -41,7 +43,7 @@ module.exports = {
       {
         resolve: "gatsby-plugin-google-tagmanager",
         options: {
-          id: "GTM-MP25XCN",
+          id: "GTM-K48G8JW",
         },
       },
     {
