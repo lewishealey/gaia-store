@@ -18,16 +18,14 @@ module.exports = {
       },
     },
     {
-        resolve: `gatsby-plugin-prefetch-google-fonts`,
+        resolve: `gatsby-plugin-google-fonts`,
         options: {
           fonts: [
-            {
-              family: `Montserrat`,
-              subsets: [`100`,`200`,`300`,`400`,`500`,`600`,`700`,`800`,`900`],
-            },
+            `montserrat\:100,200,300,400,600,700,800,900` // you can also specify font weights and styles
           ],
-        },
-      },
+          display: 'swap'
+        }
+    },
     {
         resolve: `gatsby-plugin-alias-imports`,
         options: {
