@@ -124,6 +124,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                     data {
                         Name
                         Redflag
+                        What_is_it
                         What_does_it_do
                         Product_Type
                         Where_it_comes_from

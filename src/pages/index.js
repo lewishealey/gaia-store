@@ -8,8 +8,10 @@ const Index = ({data}) => {
     const [search, setSearch] = useState(null);
 
   return <Layout>
-    <SEO title="Gaia | Online store" />
-    <h1>Ingredients info you can understand</h1>
+    <SEO
+        title="Gaia | Online store"
+        description="Learn more about the ingredients in the products you use with our simple and jargon-free explanations."/>
+    <h1>Gaia Store</h1>
     <h2>Subtitle here</h2>
 
     <div className="ingredient-list__search">
